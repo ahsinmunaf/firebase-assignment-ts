@@ -1,8 +1,0 @@
-19:46:47.949 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-19:46:48.146 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
-19:48:40.774 [NamespaceSystem-akka.actor.default-dispatcher-9] INFO com.firebase.core.namespace.NamespaceActor - fir-assignment-f2a6a successfully activated FBKV (SurveyIdle(0)) wait: 160ms, init: 0ms
-20:59:37.208 [FirebaseWorkerPool-1-1] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
-namespace your-database-id, but the emulator is configured for fir-assignment-f2a6a. To 
-opt-out of single project mode add/set the singleProjectMode: false property in 
-the firebase.json emulators config. 
-20:59:37.469 [NamespaceSystem-akka.actor.default-dispatcher-15] INFO com.firebase.core.namespace.NamespaceActor - your-database-id successfully activated FBKV (SurveyIdle(0)) wait: 78ms, init: 0ms
