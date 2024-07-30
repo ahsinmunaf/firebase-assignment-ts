@@ -1,52 +1,77 @@
-import React, { useEffect, useState } from "react";
-import {firestore, functions} from "./firebase-config";
-import { collection, getDocs } from "firebase/firestore";
+/**
+ * Importing necessary modules and components from respective libraries
+ */
+import React, {useEffect, useState} from "react";
+import {functions} from "./firebase-config";
 import {httpsCallable} from "firebase/functions";
 import 'firebase/functions';
-import {onValue, ref, getDatabase} from "firebase/database";
-import { Button, Flex } from 'antd';
+import {getDatabase, onValue, ref} from "firebase/database";
+import {Button, Flex} from 'antd';
 import NotificationsTable, {NotificationDataType} from "./components/NotificationsTable";
 
+/**
+ * Type definition for the loading state of notifications
+ */
 type LoadingState = {
   notification1: boolean;
   notification2: boolean;
   notification3: boolean;
 };
 
+/**
+ * Interface for the format of a notification
+ */
 interface NotificationFormat {
   content: string;
   isRead: boolean;
   createdAt: Date;
 }
 
+/**
+ * Interface for the notifications object
+ */
 interface Notifications {
   [key: string]: NotificationFormat;
 }
 
+/**
+ * Main App component
+ */
 const App: React.FC = () => {
+  /**
+   * State variables for notifications and loading state
+   */
   const [notifications, setNotifications] = useState<NotificationDataType[]>([]);
   const [isLoading, setIsLoading] = useState<LoadingState>({
     notification1: false,
     notification2: false,
     notification3: false
   });
-  
+
+  /**
+   * useEffect hook to fetch notifications from Firebase
+   */
   useEffect(() => {
-    
+
     const database = getDatabase()
     const query = ref(database, 'notifications');
-    
-    
+
+    /**
+     * Listening for changes in the 'notifications' reference
+     */
     onValue(query, (snapshot) => {
       const data = snapshot.val() || {};
       const transformedData = transformData(data);
-      
+
       if(snapshot.exists()){
         setNotifications(transformedData)
       }
     }, {onlyOnce: false});
   }, []);
 
+  /**
+   * Function to handle button click and publish notification
+   */
   const handleButtonClick = async (message: string, notification: keyof LoadingState) => {
     try {
       setIsLoading(prevState => ({...prevState, [notification]: true}));
@@ -58,7 +83,10 @@ const App: React.FC = () => {
       setIsLoading(prevState => ({...prevState, [notification]: false}));
     }
   };
-  
+
+  /**
+   * Function to transform the notifications data
+   */
   const transformData = (notifications: Notifications): NotificationDataType[] => {
     return Object.keys(notifications).map((notification) => ({
       key: notification,
@@ -67,7 +95,10 @@ const App: React.FC = () => {
       createdAt: String(notifications[notification].createdAt)
     }));
   }
-  
+
+  /**
+   * Rendering the App component
+   */
   return (
       <div>
         <div style={{ textAlign: 'center' }}>
@@ -83,4 +114,7 @@ const App: React.FC = () => {
   );
 };
 
+/**
+ * Exporting the App component
+ */
 export default App;

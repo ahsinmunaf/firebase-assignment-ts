@@ -19244,3 +19244,52 @@ INFO: Detected non-HTTP/2 connection.
 [debug] [2024-07-29T21:39:38.595Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-updateNotification"},"extension":{},"message":"Finishing up request with event=finish"}}
 [debug] [2024-07-29T21:39:38.595Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-updateNotification"},"extension":{},"message":"Finishing up request with event=close"}}
 [debug] [2024-07-29T21:39:38.595Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-07-29T21:44:12.355Z] File /Users/bajwa/Documents/DeskZone/ivan-assignment-ts/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/bajwa/Documents/DeskZone/ivan-assignment-ts/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2024-07-29T21:44:13.387Z] Validating nodejs source
+[debug] [2024-07-29T21:44:14.815Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-07-29T21:44:14.816Z] Building nodejs source
+[debug] [2024-07-29T21:44:14.816Z] Failed to find version of module node: reached end of search path /Users/bajwa/Documents/DeskZone/ivan-assignment-ts/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-07-29T21:44:14.839Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-07-29T21:44:14.843Z] Found firebase-functions binary at '/Users/bajwa/Documents/DeskZone/ivan-assignment-ts/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8381
+
+[debug] [2024-07-29T21:44:15.482Z] Got response from /__/functions.yaml {"endpoints":{"publishNotification":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"publishNotification"},"updateNotification":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"updateNotification"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: publishNotification, updateNotification. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: publishNotification, updateNotification."}}
+[debug] [2024-07-29T21:44:15.495Z] [worker-pool] Shutting down IDLE worker (us-central1-publishNotification) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-publishNotification)"}}
+[debug] [2024-07-29T21:44:15.495Z] [worker-us-central1-publishNotification-89a2fd9b-ef0f-4dec-8519-fc4b89c94e11]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-publishNotification"},"extension":{},"message":"[worker-us-central1-publishNotification-89a2fd9b-ef0f-4dec-8519-fc4b89c94e11]: FINISHING"}}
+[debug] [2024-07-29T21:44:15.495Z] [worker-pool] Shutting down IDLE worker (us-central1-updateNotification) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-updateNotification)"}}
+[debug] [2024-07-29T21:44:15.495Z] [worker-us-central1-updateNotification-9a7433da-23d9-4543-ad3a-9648ca0304cb]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-updateNotification"},"extension":{},"message":"[worker-us-central1-updateNotification-9a7433da-23d9-4543-ad3a-9648ca0304cb]: FINISHING"}}
+[debug] [2024-07-29T21:44:15.495Z] [worker-pool] Shutting down IDLE worker (us-central1-updateNotification) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-updateNotification)"}}
+[debug] [2024-07-29T21:44:15.495Z] [worker-us-central1-updateNotification-5f1d8332-1d2e-4aca-808d-3a4a8e18ab5e]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-updateNotification"},"extension":{},"message":"[worker-us-central1-updateNotification-5f1d8332-1d2e-4aca-808d-3a4a8e18ab5e]: FINISHING"}}
+[debug] [2024-07-29T21:44:15.495Z] Definition for trigger publishNotification changed from {"eventType":"google.pubsub.topic.publish","resource":"projects/fir-assignment-f2a6a/topics/notifications"} to undefined {"metadata":{"emulator":{"name":"functions"},"message":"Definition for trigger publishNotification changed from {\"eventType\":\"google.pubsub.topic.publish\",\"resource\":\"projects/fir-assignment-f2a6a/topics/notifications\"} to undefined"}}
+[debug] [2024-07-29T21:44:15.506Z] [worker-us-central1-publishNotification-89a2fd9b-ef0f-4dec-8519-fc4b89c94e11]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-publishNotification"},"extension":{},"message":"[worker-us-central1-publishNotification-89a2fd9b-ef0f-4dec-8519-fc4b89c94e11]: exited"}}
+[debug] [2024-07-29T21:44:15.506Z] [worker-us-central1-publishNotification-89a2fd9b-ef0f-4dec-8519-fc4b89c94e11]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-publishNotification"},"extension":{},"message":"[worker-us-central1-publishNotification-89a2fd9b-ef0f-4dec-8519-fc4b89c94e11]: FINISHED"}}
+[debug] [2024-07-29T21:44:15.506Z] [worker-us-central1-updateNotification-9a7433da-23d9-4543-ad3a-9648ca0304cb]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-updateNotification"},"extension":{},"message":"[worker-us-central1-updateNotification-9a7433da-23d9-4543-ad3a-9648ca0304cb]: exited"}}
+[debug] [2024-07-29T21:44:15.506Z] [worker-us-central1-updateNotification-9a7433da-23d9-4543-ad3a-9648ca0304cb]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-updateNotification"},"extension":{},"message":"[worker-us-central1-updateNotification-9a7433da-23d9-4543-ad3a-9648ca0304cb]: FINISHED"}}
+[debug] [2024-07-29T21:44:15.507Z] [worker-us-central1-updateNotification-5f1d8332-1d2e-4aca-808d-3a4a8e18ab5e]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-updateNotification"},"extension":{},"message":"[worker-us-central1-updateNotification-5f1d8332-1d2e-4aca-808d-3a4a8e18ab5e]: exited"}}
+[debug] [2024-07-29T21:44:15.507Z] [worker-us-central1-updateNotification-5f1d8332-1d2e-4aca-808d-3a4a8e18ab5e]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-updateNotification"},"extension":{},"message":"[worker-us-central1-updateNotification-5f1d8332-1d2e-4aca-808d-3a4a8e18ab5e]: FINISHED"}}
